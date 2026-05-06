@@ -26,8 +26,21 @@ function App() {
       <div className='grid grid-cols-3 gap-4 mt-[40px]'>
           {
             cities.map((city , index)=>(
-              <div className='border-1 h-[325px]'>
-
+              <div className='border-1 h-[325px] flex flex-col p-4 rounded-2xl'>
+                <div className='flex justify-between'>
+                  <div className='flex flex-col'>
+                    <h1 className='text-3xl'>{city.city}</h1>
+                    <p>{city.country}</p>
+                  </div>
+                  <div className='text-red-600 text-3xl mt-[10px]'>X</div>
+                </div>
+                <div className='text-7xl mx-auto mt-[15px]'>
+                  {city.temp} C
+                </div>
+                <div>
+                  
+                  {city.skyState}
+                </div>
               </div>
             ))
           }
