@@ -1,9 +1,22 @@
 import {CloudSun } from 'lucide-react'
+// https://geocoding-api.open-meteo.com/v1/search?name=cairo
+//api.open-meteo.com/v1/forecast?latitude=30.06263&longitude=31.24967&current_weather=true
 import './App.css'
-import { useState } from 'react'
-import {type Cities ,type City} from './types/cities'
+
+import {type Cities, type City} from './types/cities'
+import useLocalStorage from './hooks/localStorageForCIties'
 function App() {
-  const [cities , setCities] = useState<Cities | []>([{city:"cairo" , country:"egypt" , temp:20 , skyState:"good" , windSpeed:5 , codition:"excillient"}, {city:"cairo" , country:"egypt" , temp:20 , skyState:"good" , windSpeed:5 , codition:"excillient"},{city:"cairo" , country:"egypt" , temp:20 , skyState:"good" , windSpeed:5 , codition:"excillient"},{city:"cairo" , country:"egypt" , temp:20 , skyState:"good" , windSpeed:5 , codition:"excillient"}])
+
+  const initialCities:Cities = [
+    { id: 1, city: "hjhj", country: "egypt", temp: 20, windSpeed: 5 },
+    { id: 2, city: "alexandria", country: "egypt", temp:50, windSpeed: 10 }
+  ];
+  const {value : cities , setValue :setCities} = useLocalStorage("cities" , initialCities)
+  
+  const deleteCity = (id: number) => {
+    
+        setCities((items) => items.filter(item => item.id !== id))
+}
   return (
     <div className='flex flex-col p-10 border-2 mt-7 w-[85%] mx-auto'>
       <div className='flex justify-between'>
@@ -25,21 +38,21 @@ function App() {
       </div>
       <div className='grid grid-cols-3 gap-4 mt-[40px]'>
           {
-            cities.map((city , index)=>(
-              <div className='border-1 h-[325px] flex flex-col p-4 rounded-2xl'>
+            cities.map((city)=>(
+              <div key={city.id} className='border-1 h-[290px] flex flex-col p-4 rounded-2xl'>
                 <div className='flex justify-between'>
                   <div className='flex flex-col'>
                     <h1 className='text-3xl'>{city.city}</h1>
                     <p>{city.country}</p>
                   </div>
-                  <div className='text-red-600 text-3xl mt-[10px]'>X</div>
+                  <button className='text-red-600 text-3xl mt-[10px] cursor-pointer' onClick={()=>deleteCity(city.id)}>X</button>
                 </div>
                 <div className='text-7xl mx-auto mt-[15px]'>
                   {city.temp} C
                 </div>
-                <div>
-                  
-                  {city.skyState}
+                <div className='w-[200px] h-[55px] border-1 mx-auto my-auto rounded-2xl'>
+                  <h1 className='text-center text-xl'>wind speed :</h1>
+                  <p className='text-center'>{city.windSpeed?city.windSpeed : "__"} Km/h</p>
                 </div>
               </div>
             ))
