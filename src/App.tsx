@@ -5,8 +5,18 @@ import './App.css'
 
 import {type Cities, type City} from './types/cities'
 import useLocalStorage from './hooks/localStorageForCIties'
+import React, { useState  , useEffect} from 'react'
 function App() {
-
+  const [searchInput , setSearchInput] = useState<string | null>(null)
+  const handleSearch = (e:React.ChangeEvent<HTMLInputElement>)=>{
+     const  searchValue  = e.target.value
+      setSearchInput(searchValue)
+    
+  }
+  useEffect(()=>{
+    fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${searchInput}`)
+    .then()
+  },[searchInput])
   const initialCities:Cities = [
     { id: 1, city: "hjhj", country: "egypt", temp: 20, windSpeed: 5 },
     { id: 2, city: "alexandria", country: "egypt", temp:50, windSpeed: 10 }
@@ -33,9 +43,12 @@ function App() {
         </div>
       </div>
       <div className='flex justify-between mt-[30px]'>
-        <input type="text" className='w-[90%] rounded-xl text-2xl border-1 '  placeholder='search city...'/>
-        <button  className='text-2xl bg-blue-400 hover:bg-red-500 w-[100px] h-[40px] rounded-xl cursor-pointer'>search</button>
+        <search className='flex justify-between mt-[30px] w-[100%]'>
+          <input type="text" className='w-[90%] rounded-xl text-2xl border-1 ' value={searchInput ?? ""} onChange={handleSearch}  placeholder='search city...'/>
+          <button  className='text-2xl bg-blue-400 hover:bg-red-500 w-[100px] h-[40px] rounded-xl cursor-pointer'>search</button>
+        </search>
       </div>
+      
       <div className='grid grid-cols-3 gap-4 mt-[40px]'>
           {
             cities.map((city)=>(
