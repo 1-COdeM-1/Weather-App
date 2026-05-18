@@ -1,7 +1,7 @@
 import { useState ,useEffect } from "react";
 import { type Cities } from "../types/cities";
 
-function useLocalStorage (key : string , initialValue:Cities){
+function useLocalStorage (key : string , initialValue:null){
     const stored = localStorage.getItem(`${key}`)
     const localStorageValue = stored ? JSON.parse(stored):null
 

@@ -1,10 +1,12 @@
 export type City = {
-    id:number ,
-    city : string , 
-    country : string, 
-    temp : number , 
-   
-    windSpeed : number , 
+    id : number , 
+    name : string , 
+    longitude : number , 
+    latitude : number , 
+    country_code : number , 
+    timezone : string , 
+    country : string 
     
 }
+
 export type Cities =City[]
