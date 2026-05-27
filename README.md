@@ -4,7 +4,7 @@ A modern, high-performance Weather Application built with **React**, **TypeScrip
 
 ## 🚀 Live Demo
 🔗 **Check out the live project here:** [https://weather-app-lovat-eta-7z6qa3xe4y.vercel.app/]
-
+![weather App Preview](https://github.com/user-attachments/assets/4f18db44-f8ce-41da-97dc-42e47938182d)
 
 ## ✨ Features
 
