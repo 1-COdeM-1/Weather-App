@@ -2,12 +2,9 @@
 
 A modern, high-performance Weather Application built with **React**, **TypeScript**, and **Vite**. The application fetches real-time meteorological data for any city or country worldwide and features an automatic live-refresh mechanism to ensure data accuracy.
 
----
-
 ## 🚀 Live Demo
-🔗 **Check out the live project here:** [Your Vercel Live Link Goes Here]
+🔗 **Check out the live project here:** [https://weather-app-lovat-eta-7z6qa3xe4y.vercel.app/]
 
----
 
 ## ✨ Features
 
@@ -36,8 +33,7 @@ A modern, high-performance Weather Application built with **React**, **TypeScrip
 The project follows a clean and structured directory layout to maintain high code quality:
 ```text
 src/
-├── components/          # Reusable UI components (Logo, SearchBar, WeatherCards, etc.)
-├── context/             # Global State Management (Profile & Weather Providers)
-├── hooks/               # Custom hooks handling API fetching and interval timers
-├── App.tsx              # Main entry layout configurations
-└── main.tsx             # Application mounting point
+├── components/          # Reusable UI components (Logo, SearchThings, AppContent, DropDown, ShowCities)
+├── context/             # Global State Management (SearchInput & ShowCities Providers)
+├── hooks/               # Custom hooks handling API fetching and local storage
+└── types/               # Type definitions for the application
