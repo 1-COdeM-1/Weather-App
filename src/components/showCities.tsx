@@ -38,21 +38,21 @@ useEffect(() => {
         setData2((items) => items!.filter(item => item.id !== id))
 }
     return(
-        <div className='grid grid-cols-3 gap-4 mt-[40px]'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-[40px]'>
                   {
                     data2?.map((city)=>(
-                      <div key={city.id} className='border-1 h-[290px] flex flex-col p-4 rounded-2xl'>
+                      <div key={city.id} className='border-1 flex flex-col p-4 rounded-2xl'>
                         <div className='flex justify-between'>
                           <div className='flex flex-col'>
-                            <h1 className='text-3xl'>{city.name}</h1>
+                            <h1 className='text-2xl sm:text-3xl'>{city.name}</h1>
                             <p>{city.country}</p>
                           </div>
                           <button className='text-red-600 text-3xl mt-[10px] cursor-pointer' onClick={()=>deleteCity(city.id)}>X</button>
                         </div>
-                        <div className='text-7xl mx-auto mt-[15px]'>
+                        <div className='text-5xl sm:text-6xl md:text-7xl mx-auto mt-[15px] py-2'>
                           {city.temperature} C
                         </div>
-                        <div className='w-[200px] h-[55px] border-1 mx-auto my-auto rounded-2xl'>
+                        <div className='w-full sm:w-[200px] h-[55px] border-1 mx-auto my-3 rounded-2xl flex flex-col justify-center'>
                           <h1 className='text-center text-xl'>wind speed :</h1>
                           <p className='text-center'>{city.windspeed?city.windspeed : "__"} Km/h</p>
                         </div>
