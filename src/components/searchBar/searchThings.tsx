@@ -1,12 +1,12 @@
-import { useContext } from "react"
+import { useContext ,useEffect} from "react"
 import SearchINput from "../../../context/searchInput/profileContext"
 
 
 export default function SearchThings(){
-    const {searchInput , serButton , setSearchInput , setSerButton} = useContext(SearchINput)
+    const {searchInput , serButton , setSearchInput , setSerButton,setData} = useContext(SearchINput)
     const handleSearch = (e:React.ChangeEvent<HTMLInputElement>)=>{
      const  searchValue  = e.target.value
-    //  setData(null)
+     setData(null)
       setSearchInput(searchValue)
     
   }
@@ -14,6 +14,13 @@ export default function SearchThings(){
     setSerButton(!serButton)
     
   }
+  useEffect(()=>{
+      if(searchInput.length >= 3 && serButton){
+        fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${searchInput}`)
+        .then((res)=>res.json())
+        .then((data)=>setData(data.results))
+      }
+    },[searchInput , serButton])
   
     return(
         

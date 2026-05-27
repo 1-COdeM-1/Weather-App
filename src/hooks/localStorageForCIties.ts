@@ -5,7 +5,7 @@ import { type Cities } from "../types/cities";
     const stored = localStorage.getItem(`${key}`)
     const localStorageValue = stored ? JSON.parse(stored):null
 
-    const [value , setValue] = useState<Cities>(localStorageValue ?? initialValue)
+    const [value , setValue] = useState<Cities | null>(localStorageValue ?? initialValue)
 
     useEffect(()=>{
         localStorage.setItem( `${key}` , JSON.stringify(value))
