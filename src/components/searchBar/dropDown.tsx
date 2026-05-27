@@ -1,6 +1,5 @@
 import { useContext } from "react"
 import SearchINput from "../../../context/searchInput/profileContext"
-import useLocalStorage from "../../hooks/localStorageForCIties"
 export default function DropDown (){
     const {serButton , data ,setSerButton , setCities} = useContext(SearchINput)
     
