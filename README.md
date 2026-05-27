@@ -14,7 +14,7 @@ A modern, high-performance Weather Application built with **React**, **TypeScrip
 - **Global Location Search:** Fetch precise weather details by searching for either a city name or a country.
 - **Multi-City Display:** Compare weather metrics simultaneously by viewing data for multiple cities at once.
 - **15-Second Live Refresh:** Automated background polling mechanism that updates the weather statistics every 15 seconds without lagging the UI.
-- **Comprehensive Metrics:** Displays vital weather parameters including current temperature, conditions, and **wind speed**.
+- **Comprehensive Metrics:** Displays vital weather parameters including current temperature and **wind speed**.
 - **Robust State Management:** Architected using `React Context API` to streamline data flow and eliminate prop-drilling.
 - **Component-Driven Architecture:** Clean separation of concerns with dedicated components and custom hooks for scalable development.
 - **Modern UI/UX:** A fully responsive, slick user interface styled using **Tailwind CSS**.
