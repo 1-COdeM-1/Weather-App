@@ -1,73 +1,43 @@
-# React + TypeScript + Vite
+# 🌤️ Real-Time Weather Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, high-performance Weather Application built with **React**, **TypeScript**, and **Vite**. The application fetches real-time meteorological data for any city or country worldwide and features an automatic live-refresh mechanism to ensure data accuracy.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🚀 Live Demo
+🔗 **Check out the live project here:** [Your Vercel Live Link Goes Here]
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## ✨ Features
 
-## Expanding the ESLint configuration
+- **Global Location Search:** Fetch precise weather details by searching for either a city name or a country.
+- **Multi-City Display:** Compare weather metrics simultaneously by viewing data for multiple cities at once.
+- **15-Second Live Refresh:** Automated background polling mechanism that updates the weather statistics every 15 seconds without lagging the UI.
+- **Comprehensive Metrics:** Displays vital weather parameters including current temperature, conditions, and **wind speed**.
+- **Robust State Management:** Architected using `React Context API` to streamline data flow and eliminate prop-drilling.
+- **Component-Driven Architecture:** Clean separation of concerns with dedicated components and custom hooks for scalable development.
+- **Modern UI/UX:** A fully responsive, slick user interface styled using **Tailwind CSS**.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Tech Stack
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **Frontend Library:** React (Vite-powered)
+- **Language:** TypeScript
+- **Styling:** Tailwind CSS (with responsive utility classes)
+- **State Management:** React Context API
+- **Version Control:** Git & GitHub
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📦 Project Architecture Overview
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+The project follows a clean and structured directory layout to maintain high code quality:
+```text
+src/
+├── components/          # Reusable UI components (Logo, SearchBar, WeatherCards, etc.)
+├── context/             # Global State Management (Profile & Weather Providers)
+├── hooks/               # Custom hooks handling API fetching and interval timers
+├── App.tsx              # Main entry layout configurations
+└── main.tsx             # Application mounting point
