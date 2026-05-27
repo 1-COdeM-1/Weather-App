@@ -1,5 +1,5 @@
 import { useState ,useEffect } from "react";
-import { type allData, type Cities } from "../types/cities";
+import { type allData } from "../types/cities";
 
 
  function useLocalStorage2 (key : string , initialValue:null){
