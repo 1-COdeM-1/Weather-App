@@ -18,7 +18,7 @@ export default function DropDown (){
     return(
         <>
         {serButton && data && data.length > 0 && (
-            <div className='absolute top-[275px] left-[170px] w-[70%] max-h-[300px] overflow-y-auto
+            <div className='absolute top-[140px] sm:top-[160px] left-4 sm:left-6 md:left-10 right-4 sm:right-6 md:right-10 max-h-[300px] overflow-y-auto
                             bg-white border border-gray-200 rounded-xl shadow-lg z-10'>
               {data.map((city) => (
                 <div

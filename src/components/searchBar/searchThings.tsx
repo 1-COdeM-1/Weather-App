@@ -25,9 +25,9 @@ export default function SearchThings(){
     return(
         
             <div className='flex justify-between mt-[30px]'>
-            <search className='flex justify-between mt-[30px] w-[100%]'>
-            <input type="text" className='w-[90%] rounded-xl text-2xl border-1 ' value={searchInput ?? ""} onChange={handleSearch}  placeholder='search city...'/>
-            <button  className='text-2xl bg-blue-400 hover:bg-red-500 w-[100px] h-[40px] rounded-xl cursor-pointer' onClick={handleSerButton}>search</button>
+            <search className='flex justify-between gap-2 mt-[30px] w-full'>
+            <input type="text" className='flex-1 min-w-0 rounded-xl text-base sm:text-xl md:text-2xl border-1 px-2' value={searchInput ?? ""} onChange={handleSearch}  placeholder='search city...'/>
+            <button  className='text-base sm:text-xl bg-blue-400 hover:bg-red-500 min-w-[80px] sm:w-[100px] h-[40px] rounded-xl cursor-pointer shrink-0' onClick={handleSerButton}>search</button>
             
             </search>
             
